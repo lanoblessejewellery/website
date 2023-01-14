@@ -113,9 +113,12 @@ hr{
 .footer{
     background-color: black;
     color: white;
-    position: relative;
-    bottom: -50px;
-    font-size: 10px;
+    font-size: 8px;
+    width: 100%;
+    padding: 0;
+    display: table;
+    clear: both;
+    content: " ";
 }
 
 @media only screen and (min-width:481px){
@@ -171,7 +174,7 @@ hr{
     }
 
     .footer{
-        font-size: 15px;
+        font-size: 10px;
     }
     
     #backtotop a{
@@ -234,7 +237,7 @@ hr{
     }
 
     .footer{
-        font-size: 20px;
+        font-size: 15px;
     }
     
     #backtotop a{
