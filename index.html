@@ -2,7 +2,7 @@
 <html>
     <head>
         <title>LA NOBLESSE</title>
-        <mata charset="utf-8"/>
+        <meta charset="utf-8"/>
         <link href="homepage.css" rel="stylesheet"/>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
@@ -12,13 +12,26 @@
         <img src="jewellery1.jpg" alt="la noblesse" id="logo"/>
         <h1>LA NOBLESSE</h1>
         <p class="aurum">EMAS JEWELLERY</p>
-        <img src="jewellery2.jpg" alt="jewelry" id="pic"/>
+
+        <div class="slideshow-container">
+
+            <div class="mySlides fade">
+              <img src="jewellery2.jpg" id="pic">
+            </div>
+            
+            <div class="mySlides fade">
+              <img src="jewellery3.jpg" id="pic">
+            </div>
+
+        </div>
+        <br>
+
         </div>
 
         <section class="delivery">
         <hr>
         <h2>Free Shipping<img src="shipping.png" alt="shipping"/></h2>
-        <p>Are you looking for jewellery with free shipping ?<br>Buy jewellery in LA NOBLESSE with <em style="color: brown;">FREE DELIVERY</em>. Enjoy your shopping here !</p>
+        <p>Are you looking for jewellery with free shipping ?<br>Buy jewellery from LA NOBLESSE with <em style="color: brown;">FREE DELIVERY</em>. Enjoy your shopping here !</p>
         <hr>
         <p>Click the links below to visit our shop on other platforms.</p>
         </section>
@@ -40,15 +53,34 @@
         </div>
 
     <script type="text/javascript">
+        let slideIndex = 0;
+        showSlides();
+
+        function showSlides() {
+            let i;
+            let slides = document.getElementsByClassName("mySlides");
+                for (i = 0; i < slides.length; i++) {
+                    slides[i].style.display = "none";  
+                }
+                slideIndex++;
+                    if (slideIndex > slides.length) {slideIndex = 1}    
+                    slides[slideIndex-1].style.display = "block";  
+                    setTimeout(showSlides, 5000); 
+        }
+
             window.addEventListener('scroll',function(){
 
                 scrollPosition=window.scrollY;
 
                 if(scrollPosition >= 100){
                     document.getElementById('backtotop').style.visibility="visible";
-                }else{
+                }else if(scrollPosition=0){
+                    document.getElementById('backtotop').style.visibility="visible";
+                }
+                else{
                     document.getElementById('backtotop').style.visibility="hidden";
                 }
+
             });
 
             document.addEventListener("keydown", function (event){
